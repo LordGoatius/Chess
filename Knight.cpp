@@ -1,5 +1,5 @@
-#ifndef QUEEN_H
-#define QUEEN_H
+#ifndef KNIGHT_H
+#define KNGIHT_H
 #include <cmath>
 
 class Queen {
@@ -11,9 +11,7 @@ public:
     Queen(void) : x(0), y(0), color(false) {}
 
     bool move(unsigned new_x, unsigned new_y) {
-        if ((new_x < 8 && new_y == y) || (new_y < 8 && new_x == x) || fabs(new_x - x) == fabs(new_y - y)) {
-            return true;
-        }
+        if ((fabs(new_x - x) == 3 && fabs(new_y - y) == 2) || (fabs(new_x - x) == 2 && fabs(new_y - y) == 3))
         return false;
     }
 };
