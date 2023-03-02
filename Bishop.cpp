@@ -1,27 +1,14 @@
-#ifndef BISHOP_H
-#define BISHOP_H
+#include "Bishop.h"
 
-#include <Piece.h>
-#include <cmath>
+Bishop::Bishop(void) : Piece() {}
 
-class Bishop : Piece {
-private:
-    unsigned x; // File
-    unsigned y; // Rank
-    bool color;
-public:
-    Bishop(void) : Piece() {}
+Bishop::Bishop(unsigned x, unsigned y, bool color) {
+    Piece(x, y, color);
+}
 
-    Bishop(unsigned x, unsigned y, bool color) {
-        Piece(x, y, color);
+bool Bishop::move(unsigned new_x, unsigned new_y) {
+    if (fabs(new_x - x) == fabs(new_y - y)) {
+        return true;
     }
-
-    bool move(unsigned new_x, unsigned new_y) {
-        if (fabs(new_x - x) == fabs(new_y - y)) {
-            return true;
-        }
-        return false;
-    }
-};
-
-#endif
+    return false;
+}

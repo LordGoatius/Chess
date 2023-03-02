@@ -1,26 +1,14 @@
-#ifndef QUEEN_H
-#define QUEEN_H
+#include "Queen.h"
 
-#include <cmath>
-#include <Piece.h>
+Queen::Queen(void) : Piece() {}
 
-class Queen : Piece {
-private:
-    unsigned x; // File
-    unsigned y; // Rank
-    bool color;
-public:
-    Queen(void) : Piece() {}
+Queen::Queen(unsigned x, unsigned y, bool color) {
+    Piece(x, y, color);
+}
 
-    Queen(unsigned x, unsigned y, bool color) {
-        Piece(x, y, color);
+bool Queen::move(unsigned new_x, unsigned new_y) {
+    if ((new_x < 8 && new_y == y) || (new_y < 8 && new_x == x) || fabs(new_x - x) == fabs(new_y - y)) {
+        return true;
     }
-
-    bool move(unsigned new_x, unsigned new_y) {
-        if ((new_x < 8 && new_y == y) || (new_y < 8 && new_x == x) || fabs(new_x - x) == fabs(new_y - y)) {
-            return true;
-        }
-        return false;
-    }
-};
-#endif
+    return false;
+}

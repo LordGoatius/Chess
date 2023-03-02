@@ -1,27 +1,14 @@
-#ifndef KING_H
-#define KING_H
+#include "King.h"
 
-#include <Piece.h>
-#include <cmath>
+King::King(void) : Piece() {}
 
-class King : Piece {
-private:
-    unsigned x; // File
-    unsigned y; // Rank
-    bool color;
-public:
-    King(void) : Piece() {}
+King::King(unsigned x, unsigned y, bool color) {
+    Piece(x, y, color);
+}
 
-    King(unsigned x, unsigned y, bool color) {
-        Piece(x, y, color);
+bool King::move(unsigned new_x, unsigned new_y) {
+    if (fabs(new_x - x) <= 1 && fabs(new_y - y <= 1) && (new_x - x + new_y - y != 0)) {
+        return true;
     }
-
-    bool move(unsigned new_x, unsigned new_y) {
-        if (fabs(new_x - x) <= 1 && fabs(new_y - y <= 1) && (new_x - x + new_y - y != 0)) {
-            return true;
-        }
-        return false;
-    }
-};
-
-#endif
+    return false;
+}
