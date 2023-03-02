@@ -10,7 +10,7 @@ private:
     unsigned y; // Rank
     bool color;
 public:
-    Bishop(void) : x(0), y(0), color(false) {}
+    Bishop(void) : Piece() {}
 
     Bishop(unsigned x, unsigned y, bool color) {
         Piece(x, y, color);

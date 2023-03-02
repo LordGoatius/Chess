@@ -10,7 +10,7 @@ private:
     unsigned y; // Rank
     bool color;
 public:
-    King(void) : x(0), y(0), color(false) {}
+    King(void) : Piece() {}
 
     King(unsigned x, unsigned y, bool color) {
         Piece(x, y, color);

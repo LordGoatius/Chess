@@ -4,14 +4,13 @@
 #include <cmath>
 #include <Piece.h>
 
-
 class Queen : Piece {
 private:
     unsigned x; // File
     unsigned y; // Rank
     bool color;
 public:
-    Queen(void) : x(0), y(0), color(false) {}
+    Queen(void) : Piece() {}
 
     Queen(unsigned x, unsigned y, bool color) {
         Piece(x, y, color);

@@ -8,7 +8,7 @@ private:
     unsigned y; // Rank
     bool color;
 public:
-    Rook(void) : x(0), y(0), color(false) {}
+    Rook(void) : Piece() {}
 
     Rook(unsigned x, unsigned y, bool color) {
         Piece(x, y, color);
