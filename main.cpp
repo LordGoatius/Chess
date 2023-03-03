@@ -7,5 +7,5 @@ using namespace std;
 int main() {
     Board board = Board();
 
-    cout << board;
+    cout << board.parseMove("b3");
 }

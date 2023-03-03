@@ -24,9 +24,11 @@ public:
 
     //TODO - Fill with more functions :)
 
-    shared_ptr<Piece> getPiece(int rank, int file) const;
+    shared_ptr<Piece> getPiece(int, int) const;
 
-    friend std::ostream& operator<<(std::ostream& os, const Board& d);
+    friend std::ostream& operator<<(std::ostream&, const Board&);
+
+    int parseMove(std::string);
 
 };
 

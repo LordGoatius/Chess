@@ -38,6 +38,22 @@ shared_ptr<Piece> Board::getPiece(int file, int rank) const { // Rank is columns
         return board[file][rank];
 }
 
+int Board::parseMove(std::string move) {
+    char f = toupper(move.at(0));
+    char r = move.at(1);
+
+    std::cout << f << r << std::endl;
+
+    int file = 8 - ((int)(f) - 65);
+    int rank = (int)(r) - 49;
+
+    std::cout << file << rank << std::endl;
+
+    int parsed = (10*rank) + file;
+
+    return parsed;
+}
+
 std::ostream& operator<<(std::ostream& os, const Board& b) {
     os << "---------------------------------" << std::endl;
     for (int i = 0; i < 8; ++i) {
