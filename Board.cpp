@@ -1,17 +1,11 @@
-#ifndef BOARD_H
-#define BOARD_H
-#include <string>
-#include "Piece.h"
+#include "Board.h"
 
-using namespace std;
-class Board {
-private: 
-    Piece board[8][8];
-public:
-    Board(void) {
-        board[0][0] == Rook;
+Board::Board(void) {
+    // Fill with NULL pointers
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            board[i][j] == NULL;
+        }
     }
 
-};
-
-#endif
+}

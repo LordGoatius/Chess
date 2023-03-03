@@ -5,15 +5,15 @@
 
 class Rook : Piece {
 private:
-    unsigned x; // File
-    unsigned y; // Rank
+    int x; // File
+    int y; // Rank
     bool color;
 public:
     Rook(void) {};
 
-    Rook(unsigned x, unsigned y, bool color) {};
+    Rook(int x, int y, bool color) {};
 
-    bool move(unsigned new_x, unsigned new_y) {};
+    bool move(int new_x, int new_y) {};
 };
 
 #endif

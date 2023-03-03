@@ -4,18 +4,18 @@
 
 class Piece {
 private:
-    unsigned x; // File
-    unsigned y; // Rank
+    int x; // File
+    int y; // Rank
     bool color;
 public:
     Piece(void) : x(0), y(0), color(false) {}
 
-    Piece(unsigned x, unsigned y, bool color) {
+    Piece(int x, int y, bool color) {
         this->x = x;
         this->y = y;
         this->color = color;
     }
 
-    virtual bool move(unsigned new_x, unsigned new_y) {}
+    virtual bool move(int new_x, int new_y) {}
 };
 #endif
