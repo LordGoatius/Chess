@@ -1,24 +1,20 @@
 #include <iostream>
 #include <sstream>
 
-//#include "Board.h"
-#include "Rook.h"
-#include "Bishop.h"
-#include "King.h"
-#include "Knight.h"
-#include "Pawn.h"
-#include "Queen.h"
+#include "Board.h"
+
 
 using namespace std;
 int main() {
-    Piece* pieces[] = {new Rook(0,0,true), new Bishop(0,0,true), new King(0,0,true), new Knight(0,0,true), new Pawn(0,0,true), new Queen(0,0,true)};
+    Board board = Board();
 
-    for (int i = 0; i < (sizeof(pieces) / sizeof(Piece*)); ++i) {
-        cout << pieces[i]->toString() << " ";
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 8; ++j)
+            cout << board.getPiece(i,j)->toString() << endl;
     }
-    cout << endl;
 
-    for (int i = 0; i < (sizeof(pieces) / sizeof(Piece*)); ++i) {
-        delete pieces[i];
+    for (int i = 6; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j)
+            cout << board.getPiece(i,j)->toString() << endl;
     }
 }

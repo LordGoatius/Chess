@@ -17,13 +17,13 @@ class Board {
 private: 
     array<array<shared_ptr<Piece>, 8>, 8> board;
 public:
-    Board(void) {};
+    Board(void);
 
-    virtual ~Board(void) {};
+    virtual ~Board(void);
 
     //TODO - Fill with more functions :)
 
-    shared_ptr<Piece> getPiece(int rank, int file) {};
+    shared_ptr<Piece> getPiece(int rank, int file);
 
 };
 

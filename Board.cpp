@@ -1,7 +1,12 @@
 #include "Board.h"
-#include "Rook.h"
 
 Board::Board(void) {
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 0; ++j) {
+            board[0][0] = shared_ptr<Piece>(NULL);
+        }
+    }
+
     board[0][0] = shared_ptr<Rook> (new Rook(0,0,false));
     board[0][1] = shared_ptr<Knight> (new Knight(0,1,false));
     board[0][2] = shared_ptr<Bishop> (new Bishop(0,2,false));
@@ -26,6 +31,8 @@ Board::Board(void) {
         board[6][i] = shared_ptr<Pawn> (new Pawn(6,i,true));
     }
 }
+
+Board::~Board() {}
 
 shared_ptr<Piece> Board::getPiece(int file, int rank) { // Rank is columns, file is row (x, y)
         return board[file][rank];

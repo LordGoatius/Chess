@@ -1,5 +1,5 @@
 #ifndef KNIGHT_H
-#define KNGIHT_H
+#define KNIGHT_H
 
 #include <cmath>
 #include <iostream>
