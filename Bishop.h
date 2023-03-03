@@ -2,20 +2,22 @@
 #define BISHOP_H
 
 #include <cmath>
+#include <iostream>
 #include "Piece.h"
 
-using namespace std;
 class Bishop : public Piece {
 public:
-    Bishop(void) {};
+    Bishop(void);
 
-    Bishop(int x, int y, bool color) {};
+    Bishop(int, int, bool);
 
-    bool move(int new_x, int new_y) {};
+    ~Bishop();
 
-    string toString() const {};
+    bool move(int, int);
 
-    friend ostream& operator<<(ostream& os, const Bishop& d) {};
+    std::string toString() const ;
+
+    friend std::ostream& operator<<(std::ostream& os, const Bishop& d);
 };
 
 #endif

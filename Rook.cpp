@@ -22,6 +22,6 @@ std::string Rook::toString() const {
 }
 
 std::ostream& operator<<(std::ostream& os, const Rook& d) {
-		os << "Rook";//d.toString();
+		os << d.toString();
 		return os;
 	}
