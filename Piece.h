@@ -4,7 +4,7 @@
 #include <string>
 
 class Piece {
-private:
+protected:
     int x; // File
     int y; // Rank
     bool color;
@@ -19,7 +19,7 @@ public:
 
     virtual bool move(int new_x, int new_y) {}
 
-    virtual string toString() {
+    virtual string toString() const {
         string str = "";
         str += x;
         str += " ";

@@ -11,6 +11,6 @@ Board::Board(void) {
     board[0][0] = new Rook(0,0,true);
 }
 
-Board::getPiece(int rank, file) { // Rank is columns, file is row (x, y)
+Piece* Board::getPiece(int rank, int file) { // Rank is columns, file is row (x, y)
         return board[file][rank];
 }

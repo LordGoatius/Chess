@@ -15,7 +15,7 @@ public:
 
     virtual bool move(int new_x, int new_y) {};
 
-    virtual string toString() {}
+    string toString() const {}
 };
 
 #endif
