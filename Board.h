@@ -4,6 +4,7 @@
 #include <string>
 #include <array>
 #include <memory>
+#include <iostream>
 
 #include "Pawn.h"
 #include "Rook.h"
@@ -23,7 +24,9 @@ public:
 
     //TODO - Fill with more functions :)
 
-    shared_ptr<Piece> getPiece(int rank, int file);
+    shared_ptr<Piece> getPiece(int rank, int file) const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Board& d);
 
 };
 

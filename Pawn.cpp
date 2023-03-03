@@ -5,7 +5,7 @@ Pawn::Pawn(void) : Piece() {}
 Pawn::Pawn(int x, int y, bool color) : Piece(x, y, color) {}
 
 Pawn::~Pawn() {
-    std::cout << "Destroyed" << std::endl;
+    //std::cout << "Destroyed" << std::endl;
 }
 
 bool Pawn::move(int new_x, int new_y) {
@@ -31,7 +31,10 @@ bool Pawn::move(int new_x, int new_y) {
 }
 
 std::string Pawn::toString() const {
-        std::string str = Piece::toString();
-        str += " Pawn";
-        return str;
+        return "P";
 }
+
+std::ostream& operator<<(std::ostream& os, const Pawn& d) {
+        os << d.toString();
+        return os;
+    }

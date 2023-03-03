@@ -6,7 +6,7 @@ Queen::Queen(void) : Piece() {}
 Queen::Queen(int x, int y, bool color) : Piece(x, y, color) {}
 
 Queen::~Queen() {
-    std::cout << "Destroyed" << std::endl;
+    //std::cout << "Destroyed" << std::endl;
 }
 
 bool Queen::move(int new_x, int new_y) {
@@ -17,12 +17,10 @@ bool Queen::move(int new_x, int new_y) {
 }
 
 std::string Queen::toString() const {
-        std::string str = Piece::toString();
-        str += " Queen";
-        return str;
+        return "Q";
 }
 
 std::ostream& operator<<(std::ostream& os, const Queen& d) {
-		os << d.toString();
-		return os;
-	}
+        os << d.toString();
+        return os;
+    }

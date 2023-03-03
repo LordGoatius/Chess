@@ -5,7 +5,7 @@ Rook::Rook(void) : Piece() {}
 Rook::Rook(int x, int y, bool color) : Piece(x, y, color) {}
 
 Rook::~Rook() {
-    std::cout << "Destroyed" << std::endl;
+    //std::cout << "Destroyed" << std::endl;
 }
 
 bool Rook::move(int new_x, int new_y) {
@@ -16,9 +16,7 @@ bool Rook::move(int new_x, int new_y) {
 }
 
 std::string Rook::toString() const {
-        std::string str = Piece::toString();
-        str += " Rook";
-        return str;
+        return "R";
 }
 
 std::ostream& operator<<(std::ostream& os, const Rook& d) {

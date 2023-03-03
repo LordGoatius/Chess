@@ -5,8 +5,7 @@ Bishop::Bishop(void) : Piece() {}
 Bishop::Bishop(int x, int y, bool color) : Piece(x,y,color) {}
 
 Bishop::~Bishop() {
-    std::cout << "Destroyed" << std::endl;
-
+    //std::cout << "Destroyed" << std::endl;
 }
 
 bool Bishop::move(int new_x, int new_y) {
@@ -17,9 +16,7 @@ bool Bishop::move(int new_x, int new_y) {
 }
 
 std::string Bishop::toString() const {
-        std::string str = Piece::toString();
-        str += " Bishop";
-        return str;
+        return "B";
 }
 
 std::ostream& operator<<(std::ostream& os, const Bishop& d) {

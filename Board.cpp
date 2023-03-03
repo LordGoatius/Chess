@@ -34,6 +34,23 @@ Board::Board(void) {
 
 Board::~Board() {}
 
-shared_ptr<Piece> Board::getPiece(int file, int rank) { // Rank is columns, file is row (x, y)
+shared_ptr<Piece> Board::getPiece(int file, int rank) const { // Rank is columns, file is row (x, y)
         return board[file][rank];
+}
+
+std::ostream& operator<<(std::ostream& os, const Board& b) {
+    os << "---------------------------------" << std::endl;
+    for (int i = 0; i < 8; ++i) {
+        os << "|";
+        for (int j = 0; j < 8; ++j) {
+            if (b.getPiece(i,j) != NULL) {
+                os << " " << b.getPiece(i,j)->toString() << " |";
+            } else {
+                os << "   |";
+            }
+        }
+        os << std::endl;
+        os << "---------------------------------" << std::endl;
+    }
+    return os;
 }
