@@ -2,20 +2,22 @@
 #define ROOK_H
 
 #include "Piece.h"
+#include <iostream>
+#include <string>
 
-class Rook : Piece {
-private:
-    int x; // File
-    int y; // Rank
-    bool color;
+class Rook : public Piece {
 public:
-    Rook(void) {};
+    Rook(void);
 
-    Rook(int x, int y, bool color) {};
+    Rook(int, int, bool);
 
-    virtual bool move(int new_x, int new_y) {};
+    ~Rook();
 
-    string toString() const {}
+    bool move(int, int);
+
+    std::string toString() const ;
+
+    friend std::ostream& operator<<(std::ostream&, const Rook&);
 };
 
 #endif

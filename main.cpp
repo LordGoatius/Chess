@@ -1,9 +1,11 @@
 #include <iostream>
+#include <sstream>
 
-#include "Board.h"
+//#include "Board.h"
+#include "Rook.h"
 
+using namespace std;
 int main() {
-    Board b;
-    Piece* piece = b.getPiece(8,8);
-    cout << piece->toString() << endl;
+    Piece* rook = new Rook(0,0,true);
+    delete rook;
 }

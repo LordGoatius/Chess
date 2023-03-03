@@ -2,6 +2,9 @@
 #define BOARD_H
 
 #include <string>
+#include <array>
+#include <memory>
+
 #include "Pawn.h"
 #include "Rook.h"
 #include "Knight.h"
@@ -12,13 +15,15 @@
 using namespace std;
 class Board {
 private: 
-    Piece* board[8][8];
+    array<array<shared_ptr<Piece>, 8>, 8> board;
 public:
     Board(void) {};
 
+    virtual ~Board(void) {};
+
     //TODO - Fill with more functions :)
 
-    Piece* getPiece(int rank, int file) {}
+    shared_ptr<Piece> getPiece(int rank, int file) {};
 
 };
 
