@@ -1,6 +1,7 @@
 #ifndef PIECE_H
 #define PIECE_H
 #include <cmath>
+#include <string>
 
 class Piece {
 private:
@@ -17,5 +18,18 @@ public:
     }
 
     virtual bool move(int new_x, int new_y) {}
+
+    virtual string toString() {
+        string str = "";
+        str += x;
+        str += " ";
+        str += y;
+        if (color) {
+            str += " White";
+        } else {
+            str += " Black";
+        }
+        return str;
+    }
 };
 #endif

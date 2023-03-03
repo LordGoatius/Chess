@@ -18,6 +18,8 @@ public:
 
     //TODO - Fill with more functions :)
 
+    Piece* getPiece(int rank, int file) {}
+
 };
 
 #endif

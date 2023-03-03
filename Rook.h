@@ -13,7 +13,9 @@ public:
 
     Rook(int x, int y, bool color) {};
 
-    bool move(int new_x, int new_y) {};
+    virtual bool move(int new_x, int new_y) {};
+
+    virtual string toString() {}
 };
 
 #endif
