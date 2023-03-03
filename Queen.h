@@ -2,18 +2,21 @@
 #define QUEEN_H
 
 #include "Piece.h"
+#include <string>
+#include <iostream>
 
-using namespace std;
 class Queen : public Piece {
 public:
-    Queen(void) {};
+    Queen(void);
 
-    Queen(int x, int y, bool color) {};
+    Queen(int , int , bool);
 
-    bool move(int new_x, int new_y) {};
+    ~Queen();
 
-    string toString() const {};
+    bool move(int , int);
 
-    friend ostream& operator<<(ostream& os, const Queen& d) {};
+    std::string toString() const ;
+
+    friend std::ostream& operator<<(std::ostream& os, const Queen& d);
 };
 #endif

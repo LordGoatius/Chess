@@ -7,10 +7,11 @@
 #include "King.h"
 #include "Knight.h"
 #include "Pawn.h"
+#include "Queen.h"
 
 using namespace std;
 int main() {
-    Piece* pieces[] = {new Rook(0,0,true), new Bishop(0,0,true), new King(0,0,true), new Knight(0,0,true), new Pawn(0,0,true)};
+    Piece* pieces[] = {new Rook(0,0,true), new Bishop(0,0,true), new King(0,0,true), new Knight(0,0,true), new Pawn(0,0,true), new Queen(0,0,true)};
 
     for (int i = 0; i < (sizeof(pieces) / sizeof(Piece*)); ++i) {
         cout << pieces[i]->toString() << " ";
