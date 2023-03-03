@@ -2,19 +2,21 @@
 #define KNGIHT_H
 
 #include <cmath>
+#include <iostream>
 #include "Piece.h"
 
-using namespace std;
 class Knight : public Piece {
 public:
-    Knight(void) {}
+    Knight(void);
 
-    Knight(int x, int y, bool color) {}
+    Knight(int, int, bool);
 
-    bool move(int new_x, int new_y) {}
+    ~Knight();
 
-    string Knight::toString() const {}
+    bool move(int , int );
 
-    friend ostream& operator<<(ostream& os, const Knight& d) {}
+    std::string toString() const ;
+
+    friend std::ostream& operator<<(std::ostream& os, const Knight& d);
 };
 #endif

@@ -2,19 +2,21 @@
 #define PAWN_H
 
 #include <cmath>
+#include <iostream>
 #include "Piece.h"
 
-using namespace std;
 class Pawn : public Piece {
 public:
-    Pawn(void) {};
+    Pawn(void);
 
-    Pawn(int x, int y, bool color) {};
+    Pawn(int, int, bool );
 
-    bool move(int new_x, int new_y) {};
+    ~Pawn();
 
-    string Pawn::toString() const {}
+    bool move(int , int );
 
-    friend ostream& operator<<(ostream& os, const Pawn& d) {}
+    std::string toString() const ;
+
+    friend std::ostream& operator<<(std::ostream& os, const Pawn& d);
 };
 #endif

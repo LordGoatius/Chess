@@ -2,21 +2,22 @@
 #define KING_H
 
 #include <cmath>
+#include <iostream>
 #include "Piece.h"
-
-using namespace std;
 
 class King : public Piece {
 public:
-    King(void) {};
+    King(void);
 
-    King(int x, int y, bool color) {};
+    King(int, int, bool);
 
-    bool move(int new_x, int new_y) {};
+    ~King();
 
-    string King::toString() const {}
+    bool move(int, int);
 
-    friend ostream& operator<<(ostream& os, const King& d) {}
+    std::string toString() const ;
+
+    friend std::ostream& operator<<(std::ostream& os, const King& d);
 };
 
 #endif

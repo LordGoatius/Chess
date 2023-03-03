@@ -4,6 +4,10 @@ King::King(void) : Piece() {}
 
 King::King(int x, int y, bool color) : Piece(x, y, color) {}
 
+King::~King() {
+    std::cout << "Destroyed" << std::endl;
+}
+
 bool King::move(int new_x, int new_y) {
     if (fabs(new_x - x) <= 1 && fabs(new_y - y <= 1) && (new_x - x + new_y - y != 0)) {
         return true;
@@ -11,13 +15,13 @@ bool King::move(int new_x, int new_y) {
     return false;
 }
 
-string King::toString() const {
-        string str = Piece::toString();
+std::string King::toString() const {
+        std::string str = Piece::toString();
         str += " King";
         return str;
 }
 
-ostream& operator<<(ostream& os, const King& d) {
+std::ostream& operator<<(std::ostream& os, const King& d) {
 		os << d.toString();
 		return os;
 	}

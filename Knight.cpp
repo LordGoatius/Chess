@@ -4,18 +4,25 @@ Knight::Knight(void) : Piece() {}
 
 Knight::Knight(int x, int y, bool color) : Piece(x, y, color) {}
 
+Knight::~Knight() {
+    std::cout << "Destroyed" << std::endl;
+    }
+
 bool Knight::move(int new_x, int new_y) {
-    if ((fabs(new_x - x) == 3 && fabs(new_y - y) == 2) || (fabs(new_x - x) == 2 && fabs(new_y - y) == 3))
-    return false;
+    if ((fabs(new_x - x) == 3 && fabs(new_y - y) == 2) || (fabs(new_x - x) == 2 && fabs(new_y - y) == 3)) {
+        return true;
+    } else 
+        return false;
+        
 }
 
-string Knight::toString() const {
-        string str = Piece::toString();
-        str += " knight";
+std::string Knight::toString() const {
+        std::string str = Piece::toString();
+        str += " Knight";
         return str;
 }
 
-ostream& operator<<(ostream& os, const Knight& d) {
+std::ostream& operator<<(std::ostream& os, const Knight& d) {
 		os << d.toString();
 		return os;
-	}
+}
