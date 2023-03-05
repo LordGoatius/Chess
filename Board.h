@@ -30,6 +30,10 @@ public:
 
     int parseMove(std::string);
 
+    bool makeMove(std::string, std::string);
+
+    bool makeMove(int, int);
+
 };
 
 #endif

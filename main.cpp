@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sstream>
+#include <string>
 
 #include "Board.h"
 
@@ -9,5 +10,7 @@ int main() {
 
     cout << board << endl;
 
-    cout << board.parseMove("b3");
+    board.makeMove("g1", "f3");
+
+    cout << board << endl;
 }
