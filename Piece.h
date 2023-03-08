@@ -31,6 +31,22 @@ public:
         return this->y;
     }
 
+    bool setX(int x) {
+        this->x = x;
+        return true;
+    }
+
+    bool setY(int y) {
+        this->y = y;
+        return true;
+    }
+
+    bool setXY(int x, int y) {
+        this->setX(x);
+        this->setY(y);
+        return true;
+    }
+
     virtual std::string toString() const {
         std::ostringstream oss;
         oss << x << y << color;
