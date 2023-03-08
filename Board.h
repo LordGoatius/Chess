@@ -16,7 +16,7 @@
 using namespace std;
 class Board {
 private: 
-    array<array<shared_ptr<Piece>, 8>, 8> board;
+    array< array< shared_ptr<Piece>, 8>, 8> board;
 public:
     Board(void);
 

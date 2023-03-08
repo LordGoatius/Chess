@@ -3,7 +3,7 @@
 Board::Board(void) {
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 0; ++j) {
-            board[0][0] = shared_ptr<Piece>(NULL);
+            this->board[0][0] = shared_ptr<Piece>(NULL);
         }
     }
 
