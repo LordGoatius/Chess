@@ -10,6 +10,5 @@ int main() {
 
     cout << board.makeMove("g1", "h3") << endl;
 
-    cout << "This runs, right?" << endl;
     cout << board << endl;
 }
