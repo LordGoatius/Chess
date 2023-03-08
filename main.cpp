@@ -8,9 +8,8 @@ using namespace std;
 int main() {
     Board board = Board();
 
-    cout << board << endl;
+    cout << board.makeMove("g1", "h3") << endl;
 
-    board.makeMove("g1", "f3");
-
+    cout << "This runs, right?" << endl;
     cout << board << endl;
 }

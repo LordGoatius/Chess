@@ -9,7 +9,9 @@ Knight::~Knight() {
 }
 
 bool Knight::move(int new_x, int new_y) {
-    if ((fabs(new_x - x) == 3 && fabs(new_y - y) == 2) || (fabs(new_x - x) == 2 && fabs(new_y - y) == 3)) {
+    std::cout << new_x << " " << new_y << std::endl;
+    std::cout << this->x << " " << this->y << std::endl;
+    if ((fabs(new_x - x) == 2 && fabs(new_y - y) == 1) || (fabs(new_x - x) == 1 && fabs(new_y - y) == 2)) {
         return true;
     } else 
         return false;

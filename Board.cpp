@@ -34,8 +34,8 @@ Board::Board(void) {
 
 Board::~Board() {}
 
-shared_ptr<Piece> Board::getPiece(int file, int rank) const {
-        return board[file][rank];
+shared_ptr<Piece> Board::getPiece(int rank, int file) const { // File is Columns, Rank is Row
+        return board[rank][file];
 }
 
 int Board::parseMove(std::string move) {
@@ -72,14 +72,25 @@ bool Board::makeMove(std::string start, std::string end) {
 }
 
 bool Board::makeMove(int start, int end) {
+    std::cout << start << " " << end << std::endl;
     int startFile = start/10;
     int startRank = start%10;
+    std::cout << startFile << " " << startRank << std::endl;
     int endFile = end/10;
     int endRank = end%10;
-    shared_ptr<Piece> startPlace = this->getPiece(startFile, startRank);
-    shared_ptr<Piece> endPlace = this->getPiece(endFile, endRank);
+    std::cout << endFile << " " << endRank << std::endl;
+
+    shared_ptr<Piece> startPlace = this->getPiece(startRank, startFile);
+    shared_ptr<Piece> endPlace = this->getPiece(endRank, endFile);
+
+    std::cout << startPlace->toString() << std::endl;
+
     if(startPlace == NULL) return false;
-    if(!startPlace->move(endFile, endRank)) return false;
-    *endPlace = *startPlace;
-    startPlace = NULL;
+    if(startPlace->move(endRank, endFile)) { // Move Piece
+        shared_ptr<Piece> temp{startPlace};
+        board[startRank][startFile] = shared_ptr<Piece>(NULL);
+        board[endRank][endFile] = temp;
+        return true;
+    }
+    return false;
 }

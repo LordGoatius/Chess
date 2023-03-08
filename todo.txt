@@ -1,0 +1,2 @@
+Fix toString to add coordinates
+Add getter and setter to piece class
