@@ -9,11 +9,11 @@ class Piece {
 protected:
     int x; // File
     int y; // Rank
-    bool color;
+    char color;
 public:
-    Piece(void) : x(0), y(0), color(false) {};
+    Piece(void) : x(0), y(0), color(' ') {};
 
-    Piece(int x, int y, bool color) {
+    Piece(int x, int y, char color) {
         this->x = x;
         this->y = y;
         this->color = color;
@@ -22,6 +22,14 @@ public:
     virtual ~Piece() {};
 
     virtual bool move(int new_x, int new_y) = 0;
+
+    int getX() const {
+        return this->x;
+    }
+
+    int getY() const {
+        return this->y;
+    }
 
     virtual std::string toString() const {
         std::ostringstream oss;

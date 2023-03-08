@@ -7,28 +7,28 @@ Board::Board(void) {
         }
     }
 
-    board[0][0] = shared_ptr<Piece> (new Rook(0,0,false));
-    board[0][1] = shared_ptr<Piece> (new Knight(0,1,false));
-    board[0][2] = shared_ptr<Piece> (new Bishop(0,2,false));
-    board[0][3] = shared_ptr<Piece> (new Queen(0,3,false));
-    board[0][4] = shared_ptr<Piece> (new King(0,4,false));
-    board[0][5] = shared_ptr<Piece> (new Bishop(0,5,false));
-    board[0][6] = shared_ptr<Piece> (new Knight(0,6,false));
-    board[0][7] = shared_ptr<Piece> (new Rook(0,7,false));
+    board[0][0] = shared_ptr<Piece> (new Rook(0,0,'b'));
+    board[0][1] = shared_ptr<Piece> (new Knight(0,1,'b'));
+    board[0][2] = shared_ptr<Piece> (new Bishop(0,2,'b'));
+    board[0][3] = shared_ptr<Piece> (new Queen(0,3,'b'));
+    board[0][4] = shared_ptr<Piece> (new King(0,4,'b'));
+    board[0][5] = shared_ptr<Piece> (new Bishop(0,5,'b'));
+    board[0][6] = shared_ptr<Piece> (new Knight(0,6,'b'));
+    board[0][7] = shared_ptr<Piece> (new Rook(0,7,'b'));
     for (int i = 0; i < 8; ++i) {
-        board[1][i] = shared_ptr<Piece> (new Pawn(1,i,false));
+        board[1][i] = shared_ptr<Piece> (new Pawn(1,i,'b'));
     }
 
-    board[7][0] = shared_ptr<Piece> (new Rook(7,0,true));
-    board[7][1] = shared_ptr<Piece> (new Knight(7,1,true));
-    board[7][2] = shared_ptr<Piece> (new Bishop(7,2,true));
-    board[7][3] = shared_ptr<Piece> (new Queen(7,3,true));
-    board[7][4] = shared_ptr<Piece> (new King(7,4,true));
-    board[7][5] = shared_ptr<Piece> (new Bishop(7,5,true));
-    board[7][6] = shared_ptr<Piece> (new Knight(7,6,true));
-    board[7][7] = shared_ptr<Piece> (new Rook(7,7,true));
+    board[7][0] = shared_ptr<Piece> (new Rook(7,0,'w'));
+    board[7][1] = shared_ptr<Piece> (new Knight(7,1,'w'));
+    board[7][2] = shared_ptr<Piece> (new Bishop(7,2,'w'));
+    board[7][3] = shared_ptr<Piece> (new Queen(7,3,'w'));
+    board[7][4] = shared_ptr<Piece> (new King(7,4,'w'));
+    board[7][5] = shared_ptr<Piece> (new Bishop(7,5,'w'));
+    board[7][6] = shared_ptr<Piece> (new Knight(7,6,'w'));
+    board[7][7] = shared_ptr<Piece> (new Rook(7,7,'w'));
     for (int i = 0; i < 8; ++i) {
-        board[6][i] = shared_ptr<Piece> (new Pawn(6,i,true));
+        board[6][i] = shared_ptr<Piece> (new Pawn(6,i,'w'));
     }
 }
 
@@ -51,18 +51,18 @@ int Board::parseMove(std::string move) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Board& b) {
-    os << "---------------------------------" << std::endl;
+    os << "-----------------------------------------" << std::endl;
     for (int i = 0; i < 8; ++i) {
         os << "|";
         for (int j = 0; j < 8; ++j) {
             if (b.getPiece(i,j) != NULL) {
                 os << " " << b.getPiece(i,j)->toString() << " |";
             } else {
-                os << "   |";
+                os << "    |";
             }
         }
         os << std::endl;
-        os << "---------------------------------" << std::endl;
+        os << "-----------------------------------------" << std::endl;
     }
     return os;
 }

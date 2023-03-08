@@ -9,11 +9,11 @@ class Pawn : public Piece {
 public:
     Pawn(void);
 
-    Pawn(int, int, bool );
+    Pawn(int, int, char);
 
     ~Pawn();
 
-    bool move(int , int );
+    bool move(int , int);
 
     std::string toString() const ;
 

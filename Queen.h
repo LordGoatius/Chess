@@ -9,7 +9,7 @@ class Queen : public Piece {
 public:
     Queen(void);
 
-    Queen(int , int , bool);
+    Queen(int , int , char);
 
     ~Queen();
 

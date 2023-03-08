@@ -9,7 +9,7 @@ class Bishop : public Piece {
 public:
     Bishop(void);
 
-    Bishop(int, int, bool);
+    Bishop(int, int, char);
 
     ~Bishop();
 

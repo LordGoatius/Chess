@@ -2,14 +2,14 @@
 
 Pawn::Pawn(void) : Piece() {}
 
-Pawn::Pawn(int x, int y, bool color) : Piece(x, y, color) {}
+Pawn::Pawn(int x, int y, char color) : Piece(x, y, color) {}
 
 Pawn::~Pawn() {
     //std::cout << "Destroyed" << std::endl;
 }
 
 bool Pawn::move(int new_x, int new_y) {
-    if (color) {
+    if (color == 'b') {
         if ((new_x == x + 1) && (new_y == y)) {
             return true; // Normal Move
         } else if (new_x == x + 2 && new_y == y && x == 1) {
@@ -31,10 +31,12 @@ bool Pawn::move(int new_x, int new_y) {
 }
 
 std::string Pawn::toString() const {
-        return "P";
+    std::ostringstream oss;
+    oss << color << "P";
+    return oss.str();
 }
 
 std::ostream& operator<<(std::ostream& os, const Pawn& d) {
-        os << d.toString();
-        return os;
-    }
+    os << d.toString();
+    return os;
+}

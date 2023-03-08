@@ -2,7 +2,7 @@
 
 King::King(void) : Piece() {}
 
-King::King(int x, int y, bool color) : Piece(x, y, color) {}
+King::King(int x, int y, char color) : Piece(x, y, color) {}
 
 King::~King() {
     //std::cout << "Destroyed" << std::endl;
@@ -16,10 +16,12 @@ bool King::move(int new_x, int new_y) {
 }
 
 std::string King::toString() const {
-        return "K";
+    std::ostringstream oss;
+    oss << color << "K";
+    return oss.str();
 }
 
 std::ostream& operator<<(std::ostream& os, const King& d) {
-		os << d.toString();
-		return os;
-	}
+	os << d.toString();
+	return os;
+}

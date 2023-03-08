@@ -9,7 +9,7 @@ class Rook : public Piece {
 public:
     Rook(void);
 
-    Rook(int, int, bool);
+    Rook(int, int, char);
 
     ~Rook();
 

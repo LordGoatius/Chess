@@ -2,7 +2,7 @@
 
 Knight::Knight(void) : Piece() {}
 
-Knight::Knight(int x, int y, bool color) : Piece(x, y, color) {}
+Knight::Knight(int x, int y, char color) : Piece(x, y, color) {}
 
 Knight::~Knight() {
     //std::cout << "Destroyed" << std::endl;
@@ -19,10 +19,12 @@ bool Knight::move(int new_x, int new_y) {
 }
 
 std::string Knight::toString() const {
-        return "X";
+    std::ostringstream oss;
+    oss << color << "X";
+    return oss.str();
 }
 
 std::ostream& operator<<(std::ostream& os, const Knight& d) {
-		os << d.toString();
-		return os;
+	os << d.toString();
+	return os;
 }

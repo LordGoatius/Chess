@@ -9,11 +9,11 @@ class Knight : public Piece {
 public:
     Knight(void);
 
-    Knight(int, int, bool);
+    Knight(int, int, char);
 
     ~Knight();
 
-    bool move(int , int );
+    bool move(int, int);
 
     std::string toString() const ;
 

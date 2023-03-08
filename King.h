@@ -9,7 +9,7 @@ class King : public Piece {
 public:
     King(void);
 
-    King(int, int, bool);
+    King(int, int, char);
 
     ~King();
 
