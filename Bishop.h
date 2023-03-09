@@ -19,6 +19,8 @@ public:
 
     std::string toString() const ;
 
+    std::string toStringCase() const ;
+
     friend std::ostream& operator<<(std::ostream& os, const Bishop& d);
 };
 

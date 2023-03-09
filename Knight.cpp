@@ -24,6 +24,11 @@ std::string Knight::toString() const {
     return oss.str();
 }
 
+std::string Knight::toStringCase() const {
+    if (color == 'w') return "N";
+    return "n";
+}
+
 std::ostream& operator<<(std::ostream& os, const Knight& d) {
 	os << d.toString();
 	return os;

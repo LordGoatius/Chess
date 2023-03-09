@@ -22,6 +22,11 @@ std::string Queen::toString() const {
     return oss.str();
 }
 
+std::string Queen::toStringCase() const {
+    if (color == 'w') return "Q";
+    return "q";
+}
+
 std::ostream& operator<<(std::ostream& os, const Queen& d) {
     os << d.toString();
     return os;

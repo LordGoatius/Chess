@@ -21,6 +21,11 @@ std::string Rook::toString() const {
     return oss.str();
 }
 
+std::string Rook::toStringCase() const {
+    if (color == 'w') return "R";
+    return "r";
+}
+
 std::ostream& operator<<(std::ostream& os, const Rook& d) {
     os << d.toString();
     return os;

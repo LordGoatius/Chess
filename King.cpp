@@ -21,6 +21,11 @@ std::string King::toString() const {
     return oss.str();
 }
 
+std::string King::toStringCase() const {
+    if (color == 'w') return "K";
+    return "k";
+}
+
 std::ostream& operator<<(std::ostream& os, const King& d) {
 	os << d.toString();
 	return os;

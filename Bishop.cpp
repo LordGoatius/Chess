@@ -21,6 +21,11 @@ std::string Bishop::toString() const {
     return oss.str();
 }
 
+std::string Bishop::toStringCase() const {
+    if (color == 'w') return "B";
+    return "b";
+}
+
 std::ostream& operator<<(std::ostream& os, const Bishop& d) {
 		os << d.toString();
 		return os;

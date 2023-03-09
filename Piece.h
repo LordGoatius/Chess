@@ -16,7 +16,7 @@ public:
     Piece(int x, int y, char color) {
         this->x = x;
         this->y = y;
-        this->color = color;
+        this->color = tolower(color);
     }
 
     virtual ~Piece() {};
@@ -48,6 +48,12 @@ public:
     }
 
     virtual std::string toString() const {
+        std::ostringstream oss;
+        oss << x << y << color;
+        return oss.str();
+    }
+
+    virtual std::string toStringCase() const {
         std::ostringstream oss;
         oss << x << y << color;
         return oss.str();
