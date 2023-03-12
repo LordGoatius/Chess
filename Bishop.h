@@ -2,7 +2,9 @@
 #define BISHOP_H
 
 #include <cmath>
+#include <string>
 #include <iostream>
+#include <ostream>
 #include "Piece.h"
 
 class Bishop : public Piece {
@@ -16,6 +18,8 @@ public:
     bool move(int, int);
 
     std::string toString() const ;
+
+    std::string toStringCase() const ;
 
     friend std::ostream& operator<<(std::ostream& os, const Bishop& d);
 };

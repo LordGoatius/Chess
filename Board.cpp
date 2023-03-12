@@ -3,7 +3,7 @@
 Board::Board(void) {
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 0; ++j) {
-            board[0][0] = shared_ptr<Piece>(NULL);
+            this->board[0][0] = shared_ptr<Piece>(NULL);
         }
     }
 
@@ -51,18 +51,18 @@ int Board::parseMove(std::string move) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Board& b) {
-    os << "-----------------------------------------" << std::endl;
+    os << "---------------------------------" << std::endl;
     for (int i = 0; i < 8; ++i) {
         os << "|";
         for (int j = 0; j < 8; ++j) {
             if (b.getPiece(i,j) != NULL) {
-                os << " " << b.getPiece(i,j)->toString() << " |";
+                os << " " << b.getPiece(i,j)->toStringCase() << " |";
             } else {
-                os << "    |";
+                os << "   |";
             }
         }
         os << std::endl;
-        os << "-----------------------------------------" << std::endl;
+        os << "---------------------------------" << std::endl;
     }
     return os;
 }
@@ -72,18 +72,13 @@ bool Board::makeMove(std::string start, std::string end) {
 }
 
 bool Board::makeMove(int start, int end) {
-    std::cout << start << " " << end << std::endl;
     int startFile = start/10;
     int startRank = start%10;
-    std::cout << startFile << " " << startRank << std::endl;
     int endFile = end/10;
     int endRank = end%10;
-    std::cout << endFile << " " << endRank << std::endl;
 
     shared_ptr<Piece> startPlace = this->getPiece(startRank, startFile);
     shared_ptr<Piece> endPlace = this->getPiece(endRank, endFile);
-
-    std::cout << startPlace->toString() << std::endl;
 
     if(startPlace == NULL) return false;
     if(startPlace->move(endRank, endFile)) { // Move Piece

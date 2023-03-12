@@ -36,6 +36,11 @@ std::string Pawn::toString() const {
     return oss.str();
 }
 
+std::string Pawn::toStringCase() const {
+    if (color == 'w') return "P";
+    return "p";
+}
+
 std::ostream& operator<<(std::ostream& os, const Pawn& d) {
     os << d.toString();
     return os;
